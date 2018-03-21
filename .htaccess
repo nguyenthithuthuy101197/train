@@ -1,0 +1,15 @@
+php_value memory_limit 2048M
+
+#<IfModule mod_headers.c>
+#    Header set Access-Control-Allow-Origin "http://localhost:3000"
+#    Header set Access-Control-Allow-Credentials "true"
+#    Header set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+#    Header set Access-Control-Max-Age "1000"
+#    Header set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
+#</IfModule>
+
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteCond %{REQUEST_URI} !^public
+   RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
